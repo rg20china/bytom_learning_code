@@ -17,10 +17,11 @@ package cmd
 
 import (
 	"fmt"
-	"github.com/spf13/cobra"
 	"os"
-	"github.com/bytom_demo/imp"
+
+	"github.com/bytom_learning_code/imp"
 	homedir "github.com/mitchellh/go-homedir"
+	"github.com/spf13/cobra"
 	"github.com/spf13/viper"
 )
 
@@ -39,12 +40,12 @@ to quickly create a Cobra application.`,
 	// Uncomment the following line if your bare application
 	// has an action associated with it:
 	//	Run: func(cmd *cobra.Command, args []string) { },
-	Run:func(cmd *cobra.Command,args[] string){
-		if len(name)==0{
+	Run: func(cmd *cobra.Command, args []string) {
+		if len(name) == 0 {
 			cmd.Help()
 			return
 		}
-		imp.Show(name,age)
+		imp.Show(name, age)
 	},
 }
 
@@ -57,16 +58,16 @@ func Execute() {
 	}
 }
 
-var(
+var (
 	name string
 	age  int
 )
 
 func init() {
-	rootCmd.Flags().StringVarP(&name,"name","n","","person's name")
-	rootCmd.Flags().IntVarP(&age,"age","a",0,"person's age")
+	rootCmd.Flags().StringVarP(&name, "name", "n", "", "person's name")
+	rootCmd.Flags().IntVarP(&age, "age", "a", 0, "person's age")
 	//cobra.OnInitialize(initConfig)
-	
+
 	// Here you will define your flags and configuration settings.
 	// Cobra supports persistent flags, which, if defined here,
 	// will be global for your application.

@@ -15,7 +15,7 @@ limitations under the License.
 */
 package main
 
-import "github.com/bytom_demo/cmd"
+import "github.com/bytom_learning_code/cmd"
 
 func main() {
 	cmd.Execute()
